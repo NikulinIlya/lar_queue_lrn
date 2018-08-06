@@ -1,4 +1,4 @@
-## The project is to learn Laravel Queues
+## The project is for learning Laravel Queues
 
 ## License
 

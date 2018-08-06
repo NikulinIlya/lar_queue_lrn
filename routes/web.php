@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    App\Jobs\SendMessage::dispatch("TEST MESSAGE")->delay(now()->addMinutes(10));
+//    return view('welcome');
 });
