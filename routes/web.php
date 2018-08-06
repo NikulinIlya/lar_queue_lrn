@@ -13,6 +13,9 @@
 
 Route::get('/', function () {
 
-    App\Jobs\SendMessage::dispatch("TEST MESSAGE")->delay(now()->addMinutes(10));
+    App\Jobs\SendMessage::withChain([
+        new App\Jobs\PrepareJob('Prepare...'),
+        new App\Jobs\PublishJob('Publish!')
+    ])->dispatch("Start Job");
 //    return view('welcome');
 });
